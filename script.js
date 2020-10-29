@@ -30,4 +30,16 @@ let DateTime = luxon.DateTime;
 
 var now = DateTime.local();
 let currentTime = document.getElementById('currentDay');
-currentTime.textContent = "Today's Date is " + currentTime.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+currentTime.textContent = "Today's Date is " + now.toLocaleString(DateTime.DATE_FULL);
+
+// var ToDoInput = document.querySelector("#thingsToDo");
+// var saveButton = document.querySelector("saveBtn")
+
+// function saveToDo() {
+//     var toDo = localStorage.getItem("toDoText");
+//     textarea.textContent = toDo
+//     console.log(toDo)
+
+//     saveButton.addEventListener("click", saveToDo) 
+//         localStorage.setItem("toDoText")   
+// }
