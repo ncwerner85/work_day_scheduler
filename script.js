@@ -26,17 +26,45 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-let DateTime = luxon.DateTime;
+function setDate() {
+    let currentTime = document.getElementById('currentDay');
+    let DateTime = luxon.DateTime;
+    var now = DateTime.local();
+    console.log(now)
+    currentTime.textContent = "Today's Date is " + now.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+}
+setInterval(setDate, 1000);
 
-var now = DateTime.local();
-let currentTime = document.getElementById('currentDay');
-currentTime.textContent = "Today's Date is " + now.toLocaleString(DateTime.DATE_FULL);
+setDate();
 
-// var ToDoInput = document.querySelector("#thingsToDo");
+
+
+
+
+
+
+/* text entered in the textarea needs to be saved in local storage then when the page is refreshed it needs to be rendered*/
+var saveButton = document.getElementById("saveButton");
+var toDoText = document.getElementById("thingsToDo");
+
+var toDo = localStorage.getItem("toDoText");
+
+saveButton.addEventListener("click", function() {
+    toDoText.textContent = toDo;
+
+    localStorage.setItem("toDo", toDo);
+    console.log(toDo)
+});
+
+// window.localStorage.setItem(toDo, toDoInput)
+// console.log(toDoInput)
+
+
+// var toDoInput = document.querySelector("#thingsToDo");
 // var saveButton = document.querySelector("saveBtn")
 
 // function saveToDo() {
-//     var toDo = localStorage.getItem("toDoText");
+    // var toDo = localStorage.getItem("toDoText");
 //     textarea.textContent = toDo
 //     console.log(toDo)
 
