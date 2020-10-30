@@ -64,8 +64,26 @@ $(".saveBtn").on("click", function (event) {
 });
 
 var toDo8 = localStorage.getItem("8");
-console.log(toDo8);
+var toDo9 = localStorage.getItem("9");
+var toDo10 = localStorage.getItem("10");
+var toDo11 = localStorage.getItem("11");
+var toDo12 = localStorage.getItem("12");
+var toDo13 = localStorage.getItem("13");
+var toDo14 = localStorage.getItem("14");
+var toDo15 = localStorage.getItem("15");
+var toDo16 = localStorage.getItem("16");
+var toDo17 = localStorage.getItem("17");
+
 toDoText1.val(toDo8);
+toDoText2.val(toDo9);
+toDoText3.val(toDo10);
+toDoText4.val(toDo11);
+toDoText5.val(toDo12);
+toDoText6.val(toDo13);
+toDoText7.val(toDo14);
+toDoText8.val(toDo15);
+toDoText9.val(toDo16);
+toDoText10.val(toDo17);
 
 // var nineAM = document.getElementById("9");
 // var nineAM = $("#9");
