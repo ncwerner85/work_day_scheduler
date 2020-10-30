@@ -26,48 +26,52 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
+/* the current day is displayed at the top of the calendar */
+
 function setDate() {
-    let currentTime = document.getElementById('currentDay');
-    let DateTime = luxon.DateTime;
-    var now = DateTime.local();
-    console.log(now)
-    currentTime.textContent = "Today's Date is " + now.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+  let currentTime = $("#currentDay");
+  let DateTime = luxon.DateTime;
+  var now = DateTime.local();
+
+  currentTime.text(
+    "Today's Date is " + now.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS)
+  );
 }
 setInterval(setDate, 1000);
 
 setDate();
 
+/* each time block is color-coded to indicate whether it is in the past, present, or future */
 
+/* text entered in the textarea of timeblocks needs to be saved in local storage then when the page is refreshed it needs to be rendered*/
+var toDoText1 = $("#8");
+var toDoText2 = $("#9");
+var toDoText3 = $("#10");
+var toDoText4 = $("#11");
+var toDoText5 = $("#12");
+var toDoText6 = $("#13");
+var toDoText7 = $("#14");
+var toDoText8 = $("#15");
+var toDoText9 = $("#16");
+var toDoText10 = $("#17");
 
+$(".saveBtn").on("click", function (event) {
+  event.preventDefault();
+  var input = $(this).siblings()[1].value;
+  var id = $(this).siblings()[1].getAttribute("id");
 
-
-
-
-/* text entered in the textarea needs to be saved in local storage then when the page is refreshed it needs to be rendered*/
-var saveButton = document.getElementById("saveButton");
-var toDoText = document.getElementById("thingsToDo");
-
-var toDo = localStorage.getItem("toDoText");
-
-saveButton.addEventListener("click", function() {
-    toDoText.textContent = toDo;
-
-    localStorage.setItem("toDo", toDo);
-    console.log(toDo)
+  localStorage.setItem(id, input);
 });
 
-// window.localStorage.setItem(toDo, toDoInput)
-// console.log(toDoInput)
+var toDo8 = localStorage.getItem("8");
+console.log(toDo8);
+toDoText1.val(toDo8);
 
+// var nineAM = document.getElementById("9");
+// var nineAM = $("#9");
 
-// var toDoInput = document.querySelector("#thingsToDo");
-// var saveButton = document.querySelector("saveBtn")
+// var saveButton = document.getElementsByClassName("saveBtn");
+// var saveButton = $(".saveBtn")
 
-// function saveToDo() {
-    // var toDo = localStorage.getItem("toDoText");
-//     textarea.textContent = toDo
-//     console.log(toDo)
-
-//     saveButton.addEventListener("click", saveToDo) 
-//         localStorage.setItem("toDoText")   
-// }
+// nineAM.setAttribute("name", "hannah");
+// nimeAM.attr("name", "hannnah");
