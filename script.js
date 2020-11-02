@@ -46,19 +46,21 @@ let DateTime = luxon.DateTime;
 var currentHour = DateTime.local().toLocaleString({ hour: '2-digit', hour12: false });
 
 console.log(currentHour)
-let hour = []
 
-if (currentHour == currentHour) {
-    $("textarea").addClass("present");
-} else if (currentHour < currentHour) {
-    $("textarea").addClass("past");
-} else if (currentHour > currentHour) {
-    $("textarea").addClass("future");
-}
+$(".thingsToDo").each(function() {
+    if (parseInt($(this).data("hour")) < currentHour) {
+        $(this).addClass("past")
+    } else if (parseInt($(this).data("hour")) == currentHour) {
+        $(this).addClass("present")
+    } else {
+        $(this).addClass("future")
+    }
+})
+
 
 /* text entered in the textarea of timeblocks needs to be saved in local storage then when the page is refreshed it needs to be rendered*/
-var toDoText1 = $("#8");
-var toDoText2 = $("#9");
+var toDoText1 = $("#08");
+var toDoText2 = $("#09");
 var toDoText3 = $("#10");
 var toDoText4 = $("#11");
 var toDoText5 = $("#12");
