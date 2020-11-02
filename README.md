@@ -12,7 +12,7 @@
 * The application seems to be working well. 
 
 ## Screenshot
-![day planner image](assets/Screen Shot 2020-11-02 at 9.38.31 AM.png)
+![day planner image](https://github.com/ncwerner85/work_day_scheduler/blob/main/assets/Screen%20Shot%202020-11-02%20at%209.38.31%20AM.png)
 
 ## Link to deployed site
 [Workday Planner](https://ncwerner85.github.io/work_day_scheduler/)
