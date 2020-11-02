@@ -42,6 +42,19 @@ setInterval(setDate, 1000);
 setDate();
 
 /* each time block is color-coded to indicate whether it is in the past, present, or future */
+let DateTime = luxon.DateTime;
+var currentHour = DateTime.local().toLocaleString({ hour: '2-digit', hour12: false });
+
+console.log(currentHour)
+let hour = []
+
+if (currentHour == currentHour) {
+    $("textarea").addClass("present");
+} else if (currentHour < currentHour) {
+    $("textarea").addClass("past");
+} else if (currentHour > currentHour) {
+    $("textarea").addClass("future");
+}
 
 /* text entered in the textarea of timeblocks needs to be saved in local storage then when the page is refreshed it needs to be rendered*/
 var toDoText1 = $("#8");
@@ -55,11 +68,11 @@ var toDoText8 = $("#15");
 var toDoText9 = $("#16");
 var toDoText10 = $("#17");
 
-$(".saveBtn").on("click", function (event) {
-  event.preventDefault();
+$(".saveBtn").on("click", function () {
+  
   var input = $(this).siblings()[1].value;
   var id = $(this).siblings()[1].getAttribute("id");
-
+    
   localStorage.setItem(id, input);
 });
 
